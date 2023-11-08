@@ -1,4 +1,3 @@
-Dalam format yang diberikan, berikut adalah jawaban untuk tiga pertanyaan:
 
 # Tugas 7
 
