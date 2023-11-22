@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:scud_inventory/screens/list_product.dart';
 import 'package:scud_inventory/screens/menu.dart';
-import 'package:scud_inventory/screens/form.dart';
-import 'package:scud_inventory/screens/show_items.dart';
+import 'package:scud_inventory/screens/shoplist_form.dart';
 
-class RightDrawer extends StatelessWidget {
-  const RightDrawer({super.key});
+class LeftDrawer extends StatelessWidget {
+  const LeftDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class RightDrawer extends StatelessWidget {
           const DrawerHeader(
             // Bagian drawer header
             decoration: BoxDecoration(
-              color: Colors.greenAccent,
+              color: Colors.indigo,
             ),
             child: Column(
               children: [
@@ -24,15 +24,16 @@ class RightDrawer extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF35155D),
+                    color: Colors.white,
                   ),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
-                Text("Catat semua item-item mu di sini!",
+                Text("Catat seluruh keperluan belanjamu di sini!",
+                    // Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,
-                      color: Color(0xFF35155D),
+                      color: Colors.white,
                       fontWeight: FontWeight.normal,
                     ),
                 ),
@@ -61,7 +62,7 @@ class RightDrawer extends StatelessWidget {
               Buatlah routing ke ShopFormPage di sini,
               setelah halaman ShopFormPage sudah dibuat.
               */
-              Navigator.push(
+              Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => ShopFormPage(),
@@ -69,19 +70,14 @@ class RightDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.checklist),
-            title: const Text('Lihat Item'),
-            // Bagian redirection ke ShopFormPage
+            leading: const Icon(Icons.shopping_basket),
+            title: const Text('Daftar Item'),
             onTap: () {
-              /*
-              Buatlah routing ke ShopFormPage di sini,
-              setelah halaman ShopFormPage sudah dibuat.
-              */
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ShowItemsPage(),
-                  ));
+                // Route menu ke halaman produk
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductPage()),
+                );
             },
           ),
         ],
