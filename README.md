@@ -1,3 +1,38 @@
+
+# Tugas 9
+
+## 1. Apakah mungkin untuk mengambil data JSON tanpa membuat model terlebih dahulu? Jika ya, apakah ini lebih baik daripada membuat model sebelum mengambil data JSON?
+
+- Iya, kita dapat mengambil data JSON tanpa membuat model terlebih dahulu karena format JSON pada dasarnya adalah Map. Meskipun demikian, metode ini tidak lebih disarankan dibandingkan dengan pendekatan membuat model terlebih dahulu. Dengan membuat model terlebih dahulu, proses pengambilan data dari JSON menjadi lebih efisien dan menghindari pekerjaan yang berulang.
+
+## 2. Jelaskan peran CookieRequest dan mengapa instance CookieRequest perlu dibagikan ke semua komponen di aplikasi Flutter.
+
+- CookieRequest berfungsi sebagai pengidentifikasi atau alat bantu dalam proses autentikasi saat melakukan Http Request ke web Django. Instance CookieRequest perlu dibagikan ke semua komponen aplikasi Flutter agar data autentikasi dapat diakses secara konsisten di seluruh aplikasi.
+
+## 3. Jelaskan langkah-langkah pengambilan data dari JSON hingga ditampilkan pada Flutter.
+
+- Pertama, model dibuat untuk memudahkan pengambilan data. Selanjutnya, objek dibuat dengan menggunakan model tersebut sesuai dengan data Map (JSON) yang diterima. Dengan memiliki objek tersebut, kita dapat mengakses data yang dibutuhkan dan menampilkannya dalam antarmuka Flutter.
+
+## 4. Jelaskan proses autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+
+- Proses autentikasi dimulai dengan Flutter mengirimkan Http Request ke web Django menggunakan CookieRequest. Input yang dikirimkan oleh Flutter akan divalidasi di sisi Django, dan jika berhasil, Django akan memberikan respons status login dalam format JSON. Flutter akan mendeteksi respons yang diterima, dan jika sukses, akan beralih ke tampilan menu pada Flutter.
+
+## 5. Layout widget pada Flutter:
+Container: Digunakan untuk mengatur tata letak dan dekorasi widget lain.
+
+Row & Column: Digunakan untuk mengatur widget secara horizontal (Row) atau vertikal (Column).
+
+Center: Widget layout untuk membuat widget ke tengah.
+
+Expanded: Widget yang memperluas child dari Row, Column, atau Flex.
+
+Padding: Widget yang memberikan padding pada child-nya.
+
+Stack: Berguna untuk menumpuk beberapa child dalam cara yang sederhana.
+
+## 6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+
+-pertama tama saya membuat model untuk membantu proses fetch data. lalu saya mengubah beberapa fungsi pada django untuk mereturn objek JSON, lalu setelah itu saya melalkukan request http ke tiap url yang menghubungkan dengan fungsi pada django. setelah itu saya menerapkan design untuk ditampilkan .
 # Tugas 8
 ## Perbedaan antara Navigator.push() dan Navigator.pushReplacement() di Flutter:
 Navigator.push(): Metode ini menambahkan halaman baru ke atas tumpukan halaman saat ini. Jadi, ketika Anda menggunakan Navigator.push(), halaman baru ditambahkan ke atas halaman saat ini, dan jika Anda menekan tombol kembali, Anda akan kembali ke halaman sebelumnya.
